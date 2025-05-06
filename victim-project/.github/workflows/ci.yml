@@ -1,0 +1,12 @@
+name: Vulnerable Workflow
+
+on: [push]
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run third-party action (unsafe tag)
+        uses: LiiWenxuan/my-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
